@@ -1,0 +1,16 @@
+{
+    "Props": [
+        {
+            "brand": "Gemfan",
+            "diameter": 90,
+            "price": 1.90,
+            "thurst": null
+        }
+    ],
+    "Motors": [],
+    "ESC": [],
+    "FlightController": [],
+    "Reciever": [],
+    "Frame": [],
+    "Camera": []
+}
