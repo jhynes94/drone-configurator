@@ -6,9 +6,10 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <h1>Configure your Drone:</h1>
-        <Configurator />
+        <h1>Ultimate Drone Configurator</h1>
       </header>
+      
+      <Configurator />
     </div>
   );
 }

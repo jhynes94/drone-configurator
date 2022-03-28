@@ -1,0 +1,28 @@
+{
+    "Props": [
+        {
+            "brand": "Gemfan",
+            "diameter": 90,
+            "price": 1.90,
+            "thurst": null,
+            "link": "https://www.getfpv.com/gemfan-d90-90mm-3-5-5-blade-ducted-cinewhoop-propeller-set-of-4-w-m5-adapters-black.html",
+            "weight": null,
+            "rotation": "CW"
+        },
+        {
+            "brand": "",
+            "diameter": null,
+            "price": null,
+            "thurst": null,
+            "link": "",
+            "weight": null,
+            "rotation": ""
+        }
+    ],
+    "Motors": [],
+    "ESC": [],
+    "FlightController": [],
+    "Reciever": [],
+    "Frame": [],
+    "Camera": []
+}
