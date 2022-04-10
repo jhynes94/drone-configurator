@@ -44,9 +44,6 @@ const GetProductInfo = async function (ProductURL) {
 		let ldJSON = JSON.parse(document.querySelector('script[type="application/ld+json"]').innerText);
 		let attributes = document.querySelector('#product-attribute-specs-table').innerHTML;
 
-
-
-
 		return {ldJSON, data: attributes}
 	});
 
@@ -57,12 +54,10 @@ const GetProductInfo = async function (ProductURL) {
 async function app() {
 
 	let linkArray = []
-	let productsDatabase = {}
+	let productsDatabase = []
 
 	let pagesToScrape = 1 //Should be 10
 
-
-	/*
 	//Grabs all URLs to products releated to a specific catagory
 	for (let i = 1; i <= pagesToScrape; i++) {
 		console.log('Scraping page: ' + i)
@@ -74,28 +69,24 @@ async function app() {
 
 	for(link of linkArray){
 		let productInfo = await GetProductInfo(link)
-		console.log(productInfo)
-	}*/
+		fs.appendFile('datalog.txt', productInfo, function (err) {
+			if (err) throw err;
+		});
 
-	// fs.appendFile('datalog.txt',contentToFile, function (err) {
-	//     if (err) throw err;
-	// });
-
-
-
-
-	///Trying to develop better detail scraping of web page
-	let productInfo = await GetProductInfo('https://www.getfpv.com/azure-power-vanover-5-popo-quick-swap-propeller-limited-edition.html')
-
-	let product = {
-		name: productInfo.ldJSON.name,
-		image: productInfo.ldJSON.image,
+		console.log("Product " + productInfo.ldJSON.name + "Successfully scraped")
 	}
-	console.log(productInfo.data)
-	console.log(product)
 
 	
 
+	// //Trying to develop better detail scraping of web page
+	// let productInfo = await GetProductInfo('https://www.getfpv.com/azure-power-vanover-5-popo-quick-swap-propeller-limited-edition.html')
+
+	// let product = {
+	// 	name: productInfo.ldJSON.name,
+	// 	image: productInfo.ldJSON.image,
+	// }
+	// console.log(productInfo.data)
+	// console.log(product)
 	return
 }
 
